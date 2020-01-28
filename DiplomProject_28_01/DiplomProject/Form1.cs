@@ -23,19 +23,49 @@ namespace DiplomProject
 
         //------------------------------------------------------------
 
+        private void TableCheck(DataGridView table)//Удаление пустых строк таблицы
+        {
+            int n = TableBlankParam.RowCount;
+            for (int i = 0; i < TableBlankParam.RowCount - 1; i++)
+            {
+                if (TableBlankParam[0, i].Value == null || TableBlankParam[1, i].Value == null) {
+                   n--;
+                    TableBlankParam.Rows.RemoveAt(i); i--;
+                }
+               
+
+            }
+           // TableBlankParam.RowCount = n;
+        }
+
 
         private void WHArrInit(int[] W, int[] H) //Формирование массивов длин и ширин из данных с таблицы
         {
-            for (int i = 0; i < W.Length - 1; i++)
+            //int n = TableBlankParam.RowCount;
+            this.BlankSquare.DefaultCellStyle.Format = "N2";
+            
+            try
             {
-                W[i] = Convert.ToInt16(TableBlankParam[0, i].Value);
-                H[i] = Convert.ToInt16(TableBlankParam[1, i].Value);
-                TableBlankParam[2, i].Value = (double)(W[i] * H[i] / 1000);
-                //if (HeightArray[i] > maxY) maxY = HeightArray[i];
-                // MessageBox.Show(Convert.ToString(WidthHeightArray[i, 0]) + "  " + Convert.ToString(WidthHeightArray[i, 1]));
-                //g.DrawRectangle(Pens.Blue, new Rectangle(x, y, WidthArray[i], HeightArray[i]));
-                //x += WidthArray[i] + 2;
 
+                for (int i = 0; i < W.Length - 1; i++)
+                {
+
+                        W[i] = Convert.ToInt16(TableBlankParam[0, i].Value);
+                        H[i] = Convert.ToInt16(TableBlankParam[1, i].Value);
+                        //
+                        TableBlankParam[2, i].Value = (double)(W[i] * H[i]) / 10000;
+                    
+                    //TableBlankParam.RowCount = n;
+                    //if (HeightArray[i] > maxY) maxY = HeightArray[i];
+                    // MessageBox.Show(Convert.ToString(WidthHeightArray[i, 0]) + "  " + Convert.ToString(WidthHeightArray[i, 1]));
+                    //g.DrawRectangle(Pens.Blue, new Rectangle(x, y, WidthArray[i], HeightArray[i]));
+                    //x += WidthArray[i] + 2;
+
+                }
+            }
+            catch (System.FormatException ex)
+            {
+                MessageBox.Show("Таблица содержит недопустимые символы", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 
@@ -169,11 +199,12 @@ namespace DiplomProject
             panel1.Width = this.Width - TableBlankParam.Width - 100;// Ширина области для рисования в зависимости от ширины формы
             panel1.Height = this.Height - 100;
 
+            TableCheck(TableBlankParam);
             int n = TableBlankParam.RowCount; //Количество строк в таблице
-            int k = 2;                                  
+            int k = 2;
             int[] WidthArray = new int[n]; //Массивы длин и ширин заготовок
             int[] HeightArray = new int[n];
-            //int t = 0;
+            int t = 0;
             Rectangle[] BlanksArray = new Rectangle[n];//Массив заготовок
 
             WHArrInit(WidthArray, HeightArray);
@@ -344,10 +375,7 @@ namespace DiplomProject
 
 
             }
-            catch(System.FormatException ex)
-            {
-                MessageBox.Show("Таблица содержит недопустимые символы", "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            
             //ArrSort
             */
 
