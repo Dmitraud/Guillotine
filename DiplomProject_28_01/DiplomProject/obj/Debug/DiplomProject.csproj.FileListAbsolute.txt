@@ -1,0 +1,12 @@
+C:\Users\User\source\repos\DiplomProject\DiplomProject\bin\Debug\DiplomProject.exe.config
+C:\Users\User\source\repos\DiplomProject\DiplomProject\bin\Debug\DiplomProject.exe
+C:\Users\User\source\repos\DiplomProject\DiplomProject\bin\Debug\DiplomProject.pdb
+C:\Users\User\source\repos\DiplomProject\DiplomProject\obj\Debug\DiplomProject.csprojAssemblyReference.cache
+C:\Users\User\source\repos\DiplomProject\DiplomProject\obj\Debug\DiplomProject.Form1.resources
+C:\Users\User\source\repos\DiplomProject\DiplomProject\obj\Debug\DiplomProject.Properties.Resources.resources
+C:\Users\User\source\repos\DiplomProject\DiplomProject\obj\Debug\DiplomProject.csproj.GenerateResource.cache
+C:\Users\User\source\repos\DiplomProject\DiplomProject\obj\Debug\DiplomProject.csproj.CoreCompileInputs.cache
+C:\Users\User\source\repos\DiplomProject\DiplomProject\obj\Debug\DiplomProject.exe
+C:\Users\User\source\repos\DiplomProject\DiplomProject\obj\Debug\DiplomProject.pdb
+C:\Users\User\source\repos\DiplomProject\DiplomProject\obj\Debug\Interop.MSDAOSP.dll
+C:\Users\User\source\repos\DiplomProject\DiplomProject\obj\Debug\DiplomProject.csproj.ResolveComReference.cache
